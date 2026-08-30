@@ -1,0 +1,21 @@
+{
+  "report_id": "RPT-DEMO-001",
+  "status": "submitted",
+  "work_date": "2026-08-30",
+  "location": {
+    "zone": "Zone A",
+    "reference": "Segment 04"
+  },
+  "workforce": [
+    {"role": "Field inspector", "headcount": 1, "hours": 8},
+    {"role": "Maintenance crew", "headcount": 3, "hours": 7.5}
+  ],
+  "services": [
+    {"description": "Routine visual inspection", "completion_percent": 100},
+    {"description": "Corrective maintenance follow-up", "completion_percent": 60}
+  ],
+  "attachments": [
+    {"file_name": "evidence_01.jpg", "type": "photo"},
+    {"file_name": "work_note.pdf", "type": "document"}
+  ]
+}

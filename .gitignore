@@ -1,0 +1,9 @@
+# Do not add production exports, documents, credentials, or customer material.
+*.msapp
+*.zip
+*.env
+*.pbix
+*.pbit
+exports/
+screenshots/
+private/

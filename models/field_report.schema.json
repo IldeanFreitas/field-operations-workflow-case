@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FieldReport",
+  "type": "object",
+  "required": ["report_id", "status", "work_date", "location", "services", "workforce"],
+  "properties": {
+    "report_id": {"type": "string", "pattern": "^RPT-DEMO-[0-9]{3}$"},
+    "status": {"type": "string", "enum": ["draft", "ready_for_review", "submitted"]},
+    "work_date": {"type": "string", "format": "date"},
+    "location": {
+      "type": "object",
+      "required": ["zone", "reference"],
+      "properties": {
+        "zone": {"type": "string"},
+        "reference": {"type": "string"}
+      }
+    },
+    "workforce": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "headcount", "hours"],
+        "properties": {
+          "role": {"type": "string"},
+          "headcount": {"type": "integer", "minimum": 1},
+          "hours": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["description", "completion_percent"],
+        "properties": {
+          "description": {"type": "string"},
+          "completion_percent": {"type": "integer", "minimum": 0, "maximum": 100}
+        }
+      }
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file_name", "type"],
+        "properties": {
+          "file_name": {"type": "string"},
+          "type": {"type": "string", "enum": ["photo", "document"]}
+        }
+      }
+    }
+  }
+}
